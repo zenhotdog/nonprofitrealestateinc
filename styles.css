@@ -224,3 +224,30 @@ footer {
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
+/* styles for the audio element */
+audio {
+  margin: 10px;
+  width: 100%;
+  display: block;
+}
+
+/* styles for the video element */
+video {
+  margin: 10px auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* styles for the container of the video and audio elements */
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dynamic-column {
+  flex: 0 0 45%;
+  margin: 0 10px;
+}
+
