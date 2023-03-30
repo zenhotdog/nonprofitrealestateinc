@@ -2,14 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Gallery - Non-profit Real Estate Inc.</title>
+    <title>Contact Us - Non-profit Real Estate Inc.</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <!-- Header -->
     <header>
-      <img src="black_transparent_logo.png" alt="Logo goes here" width="400" height="100">
-      <div>
+      <div class="logo">
+        <img src="black_transparent_logo.png" alt="Logo goes here" width="400" height="100">
+      </div>
+      <div class="header-text">
         <h1>Non-profit Real Estate Inc.</h1>
       </div>
       <nav>
@@ -23,84 +24,115 @@
       </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
       <section>
-        <article>
-          <h2>Gallery</h2>
-          <p>Check out our current and prior listings</p>
-          <!-- Image Gallery -->
-          <div class="gallery">
-            <div class="image-grid">
-              <img src="image1.jpg" alt="Image 1" class="gallery-img" onclick="openModal(this)">
-              <img src="image2.jpg" alt="Image 2" class="gallery-img" onclick="openModal(this)">
-              <img src="image3.jpg" alt="Image 3" class="gallery-img" onclick="openModal(this)">
+        <h2>Contact Us</h2>
+	<form action="response_page.php" method="post">
+          <fieldset>
+            <legend>Contact Information</legend>
+            <div>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
             </div>
-            <div id="myModal" class="modal">
-              <span class="close" onclick="closeModal()">&times;</span>
-              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1)">&#10095;</a>
-             <div class="modal-content">
-  		<img id="modalImg" alt="Image" src="myImage.src">
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+              <label for="phone">Phone:</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Request Information</legend>
+            <div>
+              <label for="buyer-seller-both">Are you a prospective buyer, seller, or both?</label>
+              <select id="buyer-seller-both" name="buyer-seller-both">
+                <option value="buyer">Prospective Buyer</option>
+                <option value="seller">Prospective Seller</option>
+                <option value="both">Both</option>
+              </select>
+            </div>
+            <div>
+              <label for="move-timeframe">What is your estimated timeframe for making your move?</label>
+              <select id="move-timeframe" name="move-timeframe">
+                <option value="3-months">Within 3 months</option>
+                <option value="6-months">Within 6 months</option>
+                <option value="1-year">Within 1 year</option>
+                <option value="not-sure">Not Sure</option>
+              </select>
+            </div>
+            <div>
+              <label>What financing options are you considering?</label>
+              <div>
+                <input type="radio" id="pre-qualified" name="financing-options" value="pre-qualified">
+                <label for="pre-qualified">Pre-Qualified for Financing</label>
+              </div>
+              <div>
+                <input type="radio" id="cash" name="financing-options" value="cash">
+                <label for="cash">Expect to buy with cash</label>
+              </div>
+              <div>
+                <input type="radio" id="neither" name="financing-options" value="neither">
+                <label for="neither">Neither, I am selling a property</label>
+              </div>
+	      <div>
+  		<label for="appointment">Request an Appointment:</label>
+  	      <div>
+    		<input type="radio" id="in-person" name="appointment-type" value="in-person">
+    		<label for="in-person">In Person</label>
+  	     </div>
+             <div>
+    		<input type="radio" id="virtual" name="appointment-type" value="virtual">
+    		<label for="virtual">Virtual</label>
+  	    </div>
+            </div>
 	    </div>
+	   </div>
+      </fieldset>
 
-	    <script>
-  		var myImage = document.getElementById("myImage");
-  		var modalImg = document.getElementById("modalImg");
-  		modalImg.src = myImage.src;
-	      </script>
-            </div>
-          </div>
+      <fieldset>
+        <legend>Message</legend>
+        <div>
+          <textarea id="message" name="message"></textarea>
+        </div>
+      </fieldset>
 
-          <script>
-            var slideIndex = 1;
-            var modalImgWidth = 0;
-            var modalImgHeight = 0;
-
-           function openModal(img) {
-  	     var modal = document.getElementById("myModal");
-  	     var modalImg = document.getElementById("modalImg");
-  	     modal.style.display = "block";
-  	     modalImg.src = img.src;
-  	     slideIndex = Array.from(document.getElementsByClassName("gallery-img")).indexOf(img) + 1;
-  	     showSlides(slideIndex);
-  
-	    }
-
-
-            function closeModal() {
-              var modal = document.getElementById("myModal");
-              modal.style.display = "none";
-            }
-
-            function plusSlides(n) {
-              showSlides(slideIndex += n);
-            }
-
-            function currentSlide(n) {
-              showSlides(slideIndex = n);
-            }
-
-            function showSlides(n) {
-              var i;
-              var slides = document.getElementsByClassName("gallery-img");
-              if (n > slides.length) {slideIndex = 1}
-              if (n < 1) {slideIndex = slides.length}
-              var modalImg = document.getElementById("modalImg");
-              modalImg.src = slides[slideIndex-1].src;
-            }
-          </script>
-        </article>
-      </section>
-    </main>
-
-<!-- Footer -->
-<footer>
-  <nav>
-  </nav>
-  <div style="text-align: center;">
-    <p>&copy; 2022 Non-profit Real Estate Inc.</p>
+      <div class="submit-btn">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
   </div>
-</footer>
+
+  <article>
+    <h2>Email Us</h2>
+    <p>support@nonprofitrealestateinc.com</p>
+    <!-- Add more content -->
+  </article>
+  <!-- Contact Information: Displays phone number and email address -->
+  <div class="row">
+    <div>
+      <h3>Contact Information</h3>
+      <p>Phone: (555) 123-4567</p>
+    </div>
+  </div>
+  <!-- Office Location: Displays the physical address of the office -->
+  <div class="row">
+    <div>
+      <h3>Office Location</h3>
+      <p>123 Main Street, Anytown, USA</p>
+    </div>
+  </div>
+</section>
+  </main>
+  <!-- Footer Section: Includes secondary navigation and address -->
+  <footer>
+    
+    <div style="text-align: center;">
+      <p>123 Main Street, Anytown, USA</p>
+      <p>555-123-4567</p>
+    </div>
+  </footer>
 </body>
 </html>
