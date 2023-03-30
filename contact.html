@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <title>Contact Us - Non-profit Real Estate Inc.</title>
-    <!-- The 'styles.css' file is an external CSS stylesheet that centralizes and manages the styling for the entire Non-profit Real Estate Inc. website. It allows for consistency in design and ease of maintenance across all pages. The file contains styles for various elements such as headlines, headers, body text, backgrounds, navigation, footer, and anchor links. -->
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <!-- Header Section: Includes organization name and navigation -->
     <header>
-      <img src="black_transparent_logo.png" alt="Logo goes here" width="400" height="100">
-      <div>
+      <div class="logo">
+        <img src="black_transparent_logo.png" alt="Logo goes here" width="400" height="100">
+      </div>
+      <div class="header-text">
         <h1>Non-profit Real Estate Inc.</h1>
       </div>
       <nav>
@@ -24,40 +24,115 @@
       </nav>
     </header>
 
-    <!-- Main Content Section: Displays contact information and office location -->
     <main>
       <section>
-        <article>
-          <h2>Contact Us</h2>
-          <p>send an email to support@nonprofitrealestateinc.com</p>
-          <!-- Add more content -->
-        </article>
-        <!-- Contact Information: Displays phone number and email address -->
-        <div class="row">
-          <div>
-            <h3>Contact Information</h3>
-            <p>Phone: (555) 123-4567</p>
-            <p>Email: info@example.com</p>
-          </div>
+        <h2>Contact Us</h2>
+        <form action="response_page.php" method="post">
+          <fieldset>
+            <legend>Contact Information</legend>
+            <div>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+              <label for="phone">Phone:</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Request Information</legend>
+            <div>
+              <label for="buyer-seller-both">Are you a prospective buyer, seller, or both?</label>
+              <select id="buyer-seller-both" name="buyer-seller-both">
+                <option value="buyer">Prospective Buyer</option>
+                <option value="seller">Prospective Seller</option>
+                <option value="both">Both</option>
+              </select>
+            </div>
+            <div>
+              <label for="move-timeframe">What is your estimated timeframe for making your move?</label>
+              <select id="move-timeframe" name="move-timeframe">
+                <option value="3-months">Within 3 months</option>
+                <option value="6-months">Within 6 months</option>
+                <option value="1-year">Within 1 year</option>
+                <option value="not-sure">Not Sure</option>
+              </select>
+            </div>
+            <div>
+              <label>What financing options are you considering?</label>
+              <div>
+                <input type="radio" id="pre-qualified" name="financing-options" value="pre-qualified">
+                <label for="pre-qualified">Pre-Qualified for Financing</label>
+              </div>
+              <div>
+                <input type="radio" id="cash" name="financing-options" value="cash">
+                <label for="cash">Expect to buy with cash</label>
+              </div>
+              <div>
+                <input type="radio" id="neither" name="financing-options" value="neither">
+                <label for="neither">Neither, I am selling a property</label>
+              </div>
+	      <div>
+  		<label for="appointment">Request an Appointment:</label>
+  	      <div>
+    		<input type="radio" id="in-person" name="appointment-type" value="in-person">
+    		<label for="in-person">In Person</label>
+  	     </div>
+             <div>
+    		<input type="radio" id="virtual" name="appointment-type" value="virtual">
+    		<label for="virtual">Virtual</label>
+  	    </div>
+            </div>
+	    </div>
+	   </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Message</legend>
+        <div>
+          <textarea id="message" name="message"></textarea>
         </div>
-        <!-- Office Location: Displays the physical address of the office -->
-        <div class="row">
-          <div>
-            <h3>Office Location</h3>
-            <p>123 Main Street, Anytown, USA</p>
-          </div>
-        </div>
-      </section>
-    </main>
-    
-    <!-- Footer Section: Includes secondary navigation and address -->
-    <footer>
-      <nav>
-      </nav>
-      <div style="text-align: center;">
-        <p>123 Main Street, Anytown, USA</p>
-        <p>555-5555</p>
+      </fieldset>
+
+      <div class="submit-btn">
+        <button type="submit">Submit</button>
       </div>
-    </footer>
-  </body>
+    </form>
+  </div>
+
+  <article>
+    <h2>Email Us</h2>
+    <p>support@nonprofitrealestateinc.com</p>
+    <!-- Add more content -->
+  </article>
+  <!-- Contact Information: Displays phone number and email address -->
+  <div class="row">
+    <div>
+      <h3>Contact Information</h3>
+      <p>Phone: (555) 123-4567</p>
+    </div>
+  </div>
+  <!-- Office Location: Displays the physical address of the office -->
+  <div class="row">
+    <div>
+      <h3>Office Location</h3>
+      <p>123 Main Street, Anytown, USA</p>
+    </div>
+  </div>
+</section>
+  </main>
+  <!-- Footer Section: Includes secondary navigation and address -->
+  <footer>
+    
+    <div style="text-align: center;">
+      <p>123 Main Street, Anytown, USA</p>
+      <p>555-123-4567</p>
+    </div>
+  </footer>
+</body>
 </html>

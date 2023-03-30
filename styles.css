@@ -251,3 +251,31 @@ video {
   margin: 0 10px;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Center the form */
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+/* Add space between form sections */
+fieldset {
+  margin-bottom: 20px;
+}
+
+fieldset:nth-child(2) div {
+  margin-bottom: 20px;
+}
+
